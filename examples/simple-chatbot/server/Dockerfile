@@ -2,11 +2,9 @@ FROM python:3.10-bullseye
 
 RUN mkdir /app
 RUN mkdir /app/assets
-RUN mkdir /app/utils
 COPY *.py /app/
 COPY requirements.txt /app/
-copy assets/* /app/assets/
-copy utils/* /app/utils/
+COPY assets/* /app/assets/
 
 WORKDIR /app
 RUN pip3 install -r requirements.txt
